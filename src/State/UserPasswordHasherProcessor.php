@@ -8,9 +8,10 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserPasswordHasherProcessor implements ProcessorInterface
+
 {
     public function __construct(private UserPasswordHasherInterface $userPasswordHasherInterface,
-    private EntityManagerInterface $entityManagerInterface)
+    private EntityManagerInterface $em)
     {
 
     }
@@ -18,8 +19,10 @@ class UserPasswordHasherProcessor implements ProcessorInterface
     {
         $hashedPassword = $this->userPasswordHasherInterface->hashPassword($data, $data->getPassword());
         $data->setPassword($hashedPassword);
-        $this->entityManagerInterface->persist($data);
-        $this->entityManagerInterface->flush();
+
+        
+        $this->em->persist($data);
+        $this->em->flush();
 
         return $data;
     }

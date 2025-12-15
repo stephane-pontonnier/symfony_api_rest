@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\GetCollection;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -25,7 +26,8 @@ use App\State\UserPasswordHasherProcessor;
         ),
         new Patch(
             processor: UserPasswordHasherProcessor::class
-        )
+        ),
+        new Delete()
     ])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
