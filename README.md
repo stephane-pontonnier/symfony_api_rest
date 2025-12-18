@@ -33,6 +33,27 @@ php bin/console lexik:jwt:generate-keypair
 1. Accéder à l'API :
    ```bash
    http://localhost:8000/api
-   ``
-3. Authentification JWT :
+   ```
+2. Authentification JWT :
 * Endpoint pour obtenir un token : POST /api/auth
+* Payload exemple :
+  ```bash
+  {
+  "username": "admin@test.com",
+  "password": "Password123"
+  }
+  ```
+* ou bien :
+  ```bash
+  {
+  "username": "USER1@test.com",
+  "password": "USER1"
+  }
+  ```
+3. Accéder à la base de données via PhpMyAdmin :
+  ```bash
+  http://localhost:8080/
+  ```
+4. Vous pouvez via SWAGGER UI visualiser et interagir avec les données de l'API
+
+  ![SWAGGER UI](https://static1.smartbear.co/swagger/media/images/tools/opensource/swagger_ui.png)
