@@ -35,7 +35,7 @@ php bin/console lexik:jwt:generate-keypair
    http://localhost:8000/api
    ```
 2. Authentification JWT :
-* Endpoint pour obtenir un token : POST /api/auth
+* Endpoint pour obtenir un token : POST /auth
 * Payload exemple :
   ```bash
   {
